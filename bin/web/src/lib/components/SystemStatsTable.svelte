@@ -1,5 +1,6 @@
 <script lang="ts">
     import { type SystemStats } from "$lib/systemStats";
+    import Card from "$lib/components/Card.svelte";
     let { stats }: {
         stats: SystemStats;
     } = $props();
@@ -7,7 +8,7 @@
     const table_cell_classes = "border p-1 lg:p-2";
 </script>
 
-<div class="flex-1 drop-shadow p-4 flex flex-col gap-2 border rounded-md bg-gray-100 border-gray-100">
+<Card>
     <p class="text-xl mb-2">System Information</p>
     <table class="table-auto border">
         <tbody>
@@ -35,4 +36,4 @@
             </tr>
         </tbody>
     </table>
-</div>
+</Card>

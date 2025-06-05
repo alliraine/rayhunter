@@ -1,7 +1,7 @@
 <script lang="ts">
-    import { Manifest, ManifestEntry } from "$lib/manifest.svelte";
+    import { ManifestEntry } from "$lib/manifest.svelte";
     import TableRow from "./ManifestTableRow.svelte";
-    import Card from "./ManifestCard.svelte"
+    import ManifestCard from "$lib/components/ManifestCard.svelte";
     interface Props {
         entries: ManifestEntry[];
         server_is_recording: boolean;
@@ -32,6 +32,6 @@
 <!--For smaller screens we use cards-->
 <div class="lg:hidden flex flex-col gap-4">
     {#each entries as entry, i}
-        <Card {entry} current={false} {i} />
+        <ManifestCard {entry} current={false} {i} {server_is_recording}/>
     {/each}
 </div>

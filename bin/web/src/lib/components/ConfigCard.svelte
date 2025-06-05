@@ -1,0 +1,1 @@
+<!--{"qmdl_store_path":"/data/rayhunter/qmdl","port":8080,"debug_mode":false,"ui_level":1,"enable_dummy_analyzer":false,"colorblind_mode":false,"key_input_mode":1}-->

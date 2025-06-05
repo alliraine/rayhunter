@@ -5,6 +5,8 @@
 	import AnalysisStatus from "./AnalysisStatus.svelte";
 	import AnalysisView from "./AnalysisView.svelte";
     import RecordingControls from "./RecordingControls.svelte";
+    import Card from "./Card.svelte";
+
     let { entry, current, i, server_is_recording }: {
         entry: ManifestEntry;
         current: boolean;
@@ -36,7 +38,7 @@
         analysis_visible = !analysis_visible;
     }
 </script>
-<div class="{status_row_color} {status_border_color} drop-shadow p-4 flex flex-col gap-2 border rounded-md flex-1">
+<Card additional_classes="{status_row_color} {status_border_color}">
     {#if current}
         <div class="flex flex-row justify-between gap-2">
             <span class="text-xl mb-2">Current Recording</span>
@@ -71,4 +73,4 @@
     <div class="border-b {analysis_visible ? '' : 'hidden'}">
         <AnalysisView {entry} />
     </div>
-</div>
+</Card>

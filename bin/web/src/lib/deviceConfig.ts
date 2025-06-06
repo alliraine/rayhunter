@@ -1,9 +1,9 @@
 export interface DeviceConfig {
-    qmdl_store_path: String;
-    port: Number;
-    debug_mode: Boolean;
-    ui_level: Number;
-    enable_dummy_analyzer: Boolean;
-    colorblind_mode: Boolean;
-    key_input_mode: Number;
+    qmdl_store_path: string;
+    port: number;
+    debug_mode: boolean;
+    ui_level: number;
+    enable_dummy_analyzer: boolean;
+    colorblind_mode: boolean;
+    key_input_mode: number;
 }

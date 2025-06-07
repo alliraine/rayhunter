@@ -2,16 +2,26 @@ import { Manifest } from "./manifest.svelte";
 import type { SystemStats } from "./systemStats";
 import type { DeviceConfig } from "./deviceConfig";
 
-export async function req(method: string, url: string): Promise<string> {
-    const response = await fetch(url, {
+export async function req(method: string, url: string, data?: any): Promise<string> {
+    const options: RequestInit = {
         method: method,
-    });
+    };
+
+    if (data) {
+        options.headers = {
+            'Content-Type': 'application/json',
+        };
+        options.body = JSON.stringify(data);
+    };
+
+    const response = await fetch(url, options);
+
     const body = await response.text();
     if (response.status >= 200 && response.status < 300) {
         return body;
     } else {
         throw new Error(body);
-    }
+    };
 }
 
 export async function get_manifest(): Promise<Manifest> {
